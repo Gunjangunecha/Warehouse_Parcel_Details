@@ -1,0 +1,188 @@
+# Warehouse Parcel Management System
+
+## Overview
+A Python based warehouse parcel management system that allows users to input parcel details, categorize them, display them in a formatted table, and save the data to a CSV file.
+
+## Features
+1. Interactive user input for parcel details
+2. Input validation and error handling
+3. Categorized parcel organization
+4. Formatted console table display
+5. CSV file export for data persistence
+
+## Requirements
+1. Python 3.6 or higher
+2. Built-in libraries: `csv` (no additional installation needed)
+
+## Installation
+1. Save the code as `warehouse_parcel_system.py`
+2. No additional dependencies required
+
+## How to Run
+```bash
+python warehouse_parcel_system.py
+```
+
+## Expected Input
+
+### Input Format
+The program will prompt you for the following information for each parcel:
+
+1. Parcel Number : Any positive integer (e.g., 23456, 66234)
+2. Parcel Weight : Positive number in kilograms (e.g., 66234, 86643, 150.5)
+3. Parcel Category :
+Choose from :
+   Option 1: Filters
+   Option 2: Automobil_parts
+   Option 3: Cargo_containeer
+
+### Sample Input Session
+```
+====================================================
+     WAREHOUSE PARCEL MANAGEMENT SYSTEM
+====================================================
+
+Available Categories:
+1. Filters
+2. Automobil_parts
+3. Cargo_containeer
+----------------------------------------------------
+
+--- Enter Parcel Details ---
+Enter Parcel Number (or 0 to finish): 23456
+Enter Parcel Weight (kg): 66234
+Select Category:
+1. Filters
+2. Automobil_parts
+3. Cargo_containeer
+Enter choice (1-3): 1
+Parcel #23456 added successfully!
+
+--- Enter Parcel Details ---
+Enter Parcel Number (or 0 to finish): 66234
+Enter Parcel Weight (kg): 86643
+Select Category:
+1. Filters
+2. Automobil_parts
+3. Cargo_containeer
+Enter choice (1-3): 2
+Parcel #66234 added successfully!
+
+--- Enter Parcel Details ---
+Enter Parcel Number (or 0 to finish): 98432
+Enter Parcel Weight (kg): 53463
+Select Category:
+1.Filters
+2. Automobil_parts
+3. Cargo_containeer
+Enter choice (1-3): 3
+Parcel #98432 added successfully!
+
+--- Enter Parcel Details ---
+Enter Parcel Number (or 0 to finish): 0
+```
+
+## Expected Output
+
+### Console Output
+After entering all parcels and entering `0` to finish, you will see:
+
+```
+====================================================
+          WAREHOUSE PARCEL DETAILS
+====================================================
++----------+-----------------+-------------------+
+| Filters  | Automobil_parts | Cargo_containeer  |
++----------+-----------------+-------------------+
+|  23456   |      66234      |       98432       |
++----------+-----------------+-------------------+
+|  96355   |      86643      |       53463       |
++----------+-----------------+-------------------+
+|  83722   |      64326      |       87653       |
++----------+-----------------+-------------------+
+
+Data saved to 'parcel_numbers.csv' successfully!
+```
+
+### CSV File Output
+A file named `parcel_numbers.csv` will be created in the same directory with the following content:
+
+```csv
+Filters,Automobil_parts,Cargo_containeer
+23456,66234,98432
+96355,86643,53463
+83722,64326,87653
+```
+
+## Input Validation
+
+### Valid Inputs
+Parcel Number : Positive integers only
+  Valid : 23456, 100, 999999
+  Invalid : -100, 0 (except to exit), abc, 12.5
+
+Parcel Weight : Positive numbers (integers or decimals)
+  Valid : 100, 150.5, 86643
+  Invalid : -50, 0, abc
+
+Category : Must be 1, 2, or 3
+  Valid : 1, 2, 3
+  Invalid : 4, 0, a, 1.5
+
+### Error Messages
+```
+1. Parcel number must be positive. Try again.
+2. Weight must be positive. Try again.
+3. Invalid input. Please enter a number.
+4. Invalid choice. Please enter 1, 2, or 3.
+```
+
+## Example Complete Session
+
+Input :
+```
+Parcel 1: Number=23456, Weight=100, Category=1 (Filters)
+Parcel 2: Number=66234, Weight=200, Category=2 (Automobil_parts)
+Parcel 3: Number=98432, Weight=300, Category=3 (Cargo_containeer)
+Parcel 4: Number=96355, Weight=150, Category=1 (Filters)
+Exit: 0
+```
+
+Output :
+```
+====================================================
+          WAREHOUSE PARCEL DETAILS
+====================================================
++----------+-----------------+-------------------+
+| Filters  | Automobil_parts | Cargo_containeer  |
++----------+-----------------+-------------------+
+|  23456   |      66234      |       98432       |
++----------+-----------------+-------------------+
+|  96355   |                 |                   |
++----------+-----------------+-------------------+
+
+Data saved to 'parcel_numbers.csv' successfully!
+```
+
+## File Output Location
+1. CSV File Name : `parcel_numbers.csv`
+2. Location : Same directory as the Python script
+3. Format : CSV (Comma-Separated Values)
+4. Encoding : UTF-8
+
+## Notes
+1. Enter `0` as the parcel number to finish data entry
+2. Empty cells in the table indicate no parcel in that category at that position
+3. The CSV file is overwritten each time the program runs
+4. All data is organized by category in columns
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| "Invalid input" error | Make sure to enter numbers only for parcel number and weight |
+| CSV file not created | Check write permissions in the directory |
+| Table not displaying properly | Ensure console window is wide enough (at least 52 characters) |
+| Category not accepted | Enter only 1, 2, or 3 for category selection |
+
+##  Warehouse Parcel Management  ##
