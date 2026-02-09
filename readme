@@ -1,4 +1,4 @@
-# Warehouse Parcel Management System
+#   Warehouse Parcel Management System   #
 
 ## Overview
 A Python based warehouse parcel management system that allows users to input parcel details, categorize them, display them in a formatted table, and save the data to a CSV file.
